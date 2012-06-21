@@ -1,0 +1,1 @@
+This project contains the Modular Relief Framework. It contains interchangable component functions that can be used to specify different versions of Relief.
