@@ -32,5 +32,5 @@ FLAGS: There are several command line flags, all of which are optional
 
 Code written by Matthew E. Stokes
 University of Pittsburgh Biomedical Informatics Program
-Universtiy of Pittsburgh Intelligent System Program
+Universtiy of Pittsburgh Intelligent Systems Program
 2012
