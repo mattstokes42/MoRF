@@ -77,7 +77,7 @@ namespace FileUtilities
             int[] ranks = new int[endRep - startRep + 1];
             double[] power = new double[100];
             int attributes = 1000;
-            for (int rep = 0; rep <= endRep - startRep; rep++)
+            for (int rep = startRep; rep <= endRep; rep++)
             {
                 string filename = filenameStub + rep + ".txt";
                 List<ReliefUtils.SNP> SNPs = FileUtilities.Utils.ReadReliefOutput(filename);
@@ -87,7 +87,7 @@ namespace FileUtilities
                 //Find the lower ranked of the 2 informative SNPs (0 and 1)
                 int rank0 = SNPs.FindIndex(delegate(ReliefUtils.SNP s) { return s.ID == 0; });
                 int rank1 = SNPs.FindIndex(delegate(ReliefUtils.SNP s) { return s.ID == 1; });
-                ranks[rep] = Math.Max(rank0, rank1);
+                ranks[rep-startRep] = Math.Max(rank0, rank1);
             }
             string powerFilename = filenameStub + startRep + "to" + endRep + ".power.txt";
             StreamWriter powerOutput = new StreamWriter(powerFilename);

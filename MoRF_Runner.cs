@@ -12,7 +12,7 @@ class MoRF_Runner
     {
         //Parse command line arguments, if any
         CommandLineUtils.Arguments parameters = new CommandLineUtils.Arguments(args);
-        string method = "SWRF";
+        string method = "SWRFstar";
         if (parameters["f"]!=null)
             method = parameters["f"];
         int samples = 200; int attributes = 1000;
@@ -67,7 +67,7 @@ class MoRF_Runner
               model = "0" + m.ToString();
             for (int rep = startRep; rep <= endRep; rep++)
             {
-                string filename = model+"//"+ model + "." + samples + "." + rep + ".txt";
+                string filename = samples+"//"+model+"//"+ model + "." + samples + "." + rep + ".txt";
                 //Array R holds the data - rows are samples, columns are SNPs, last column is class
                 if (System.IO.File.Exists(filename))
                 {
